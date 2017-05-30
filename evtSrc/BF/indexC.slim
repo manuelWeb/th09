@@ -1,0 +1,43 @@
+== Slim::Template.new('evtSrc/var_global.slim').render
+== Slim::Template.new('evtSrc/BF/var.slim').render
+doctype strict
+html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+  head
+    meta http-equiv="Content-Type" content="text/html;charset=UTF-8"
+    title == $TH
+    link type="text/css" rel="stylesheet" href="index.css"
+    / link type="text/css" rel="stylesheet" href="index.scss"
+    script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"
+  body
+    == $styleIE
+    #evtFirst_Link.centralEvent
+      #globalLink
+        .bottomfade
+      .pck1
+        img src="pck1.png" alt=""
+      span.title-pck1 == $titre1
+      span.sub1-pck1 == $sTitre1[0]
+      span.sub2-pck1 == $sTitre1[1]
+      span.sub3-pck1 == $sTitre1[2]
+
+      .pck2
+        img src="pck2.png" alt=""
+      span.title-pck2 == $titre2
+      span.sub1-pck2 == $sTitre2[0]
+      span.sub2-pck2 == $sTitre2[1]
+
+      .pck3
+        img src="pck3.png" alt=""
+      span.title-pck3 == $titre3
+      span.sub1-pck3 == $sTitre3[0]
+      span.sub2-pck3 == $sTitre3[1]
+
+      a.js-btn.gradient-btn-evtfirst href==($linkRay) onclick==($ga_ray_btn)
+        span.reflet &nbsp;
+        span
+         == ($txtBtn[0])
+         span
+           == ($txtBtn[1])
+
+    script type="text/javascript" src="track.js"
+    / script type="text/javascript" src="firstEvt_reveal.js"

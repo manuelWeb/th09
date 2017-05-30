@@ -1,0 +1,240 @@
+// functions.scss
+/// Slightly lighten a color
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+$fontSerif: Georgia, "Times New Roman", Times, serif;
+$font-stack-arial: Arial, Helvetica, sans-serif;
+$font-stack-arial: Arial, Helvetica, sans-serif;
+$font-stack-serif: Georgia, Times, "Times New Roman", serif;
+$btn-bg : #f00;//#ffff00
+$btn-txtColor: #fff;
+
+body, ul {margin: 0;}
+ul {list-style: none;}
+.centralEvent {
+  position: relative;
+  width: 964px; height: 465px;
+  margin: 0;
+  background: url(bg.jpg) no-repeat;
+}
+
+/* js globalLink */
+#globalLink {
+  position: absolute; top: 0; left: 0;
+  width: 964px; height: 465px;
+  // background: url(evtFirst_bd-diffu.png) no-repeat left bottom; // enable to fade bottom insert
+}
+
+* {box-sizing: border-box;}
+
+.centralEvent {
+  position: relative; width: 964px; height: 465px;
+  background: url(bg.jpg) no-repeat 0 0;
+  overflow: hidden;
+}
+.pck1, .pck2, .pck3 {
+  position: absolute; top: -240px; left: 430px; overflow: hidden; width: 240px; height: 240px;
+}
+.title-pck1, .title-pck2, .title-pck3 {
+  display: inline-block;
+  position: absolute; top: 54px; left: 964px; height: 28px; padding: 0 10px;
+  font: bold italic 21px Arial, Helvetica, sans-serif;
+  background-color: #FFFF00;
+  overflow: hidden;
+}
+.title-pck2 {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.sub1-pck1, .sub2-pck1, .sub3-pck1,
+.sub1-pck3, .sub2-pck3, .sub3-pck3,
+.sub1-pck2, .sub2-pck2, .sub3-pck2 {
+  position: absolute; left: 964px; height: 24px; padding: 0 10px;
+  font: bold italic 16px/24px Arial, Helvetica, sans-serif; color: #FFF;
+  line-height: 24px;
+  background-color: #066C02;
+  overflow: hidden;
+}
+
+.pck1, .pck2, .pck3 {
+  animation-name: go;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+.pck1 {
+  animation-delay: 1s;
+}
+.pck2 {
+  animation-delay: 7s;
+}
+.pck3 {
+  animation-name: goend;
+  animation-delay: 13s;
+  animation-fill-mode: forwards;
+}
+
+.title-pck1, .title-pck2, .title-pck3,
+.sub1-pck1, .sub2-pck1, .sub3-pck1,
+.sub1-pck2, .sub2-pck2, .sub3-pck2 {
+  animation-name: titles;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+.title-pck1 {
+  animation-delay: 2s;
+}
+.title-pck2 {
+  animation-delay: 8s;
+}
+.title-pck3 {
+  animation-name: titleend;
+  animation-delay: 14s;
+  animation-fill-mode: forwards;
+}
+
+.sub1-pck1 {
+  top: 92px;
+  animation-delay: 2.1s;
+}
+.sub2-pck1 {
+  top: 122px;
+  animation-delay: 2.2s;
+}
+.sub3-pck1 {
+  top: 152px;
+  animation-delay: 2.3s;
+}
+
+.sub1-pck2 {
+  top: 92px;
+  animation-delay: 8.1s;
+}
+.sub2-pck2 {
+  top: 122px;
+  animation-delay: 8.2s;
+}
+.sub3-pck2 {
+  top: 152px;
+  animation-delay: 8.3s;
+}
+
+.sub1-pck3 {
+  top: 92px;
+  animation: titleend 3s 14.1s ease-in-out forwards;
+}
+.sub2-pck3 {
+  top: 122px;
+  animation: titleend 3s 14.2s ease-in-out forwards;
+}
+.sub3-pck3 {
+  top: 152px;
+  animation: titleend 3s 14.3s ease-in-out forwards;
+}
+
+@keyframes titles {
+  0% {left: 964px; }
+  10%,90% {left: 690px; }
+  100% {left: 964px; }
+}
+
+@keyframes go {
+  0% {opacity: 1; top: -240px; }
+  10%,90% {opacity: 1; top: 10px; }
+  100% {opacity: 1; top: -240px; }
+}
+@keyframes goend {
+  0% {opacity: 1; top: -230px; }
+  10%,100% {opacity: 1; top: 10px; }
+}
+@keyframes titleend {
+  0% {left: 964px; }
+  10%,100% {left: 690px; }
+}
+// button
+.gradient-btn-evtfirst {
+  border-radius: 56px;
+  background-color: $btn-bg;
+  // background-image: linear-gradient(#FF0000, #D45050 50%, #A60000 65%, #A60000);
+}
+.js-btn {
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  height: 56px;
+  padding: 0 16px; margin: 190px 0 0 666px;
+  text-align: center;
+  border: 3px solid #FFFFFF; color: $btn-txtColor;
+  font: normal 16px/42px $font-stack-arial; text-decoration: none;
+  text-shadow: 0 0 6px #500;
+  // transition: all .8s;
+  // &:hover{text-shadow: 0 0 3px #FFF;}
+
+  span {
+    display: inline-block;
+    + span {
+      position: relative; top: 3px; vertical-align: middle; line-height: 120%;
+    }
+    > span {
+      font-size: 21px;
+    }
+  }
+  .arrow {
+    vertical-align: middle;
+    font-size: inherit;
+  }
+  .reflet {
+    position: absolute; left: 8px; top: 3px;
+    width: 93%; height: 32px;
+    border-radius: 16px;
+    background: tint( $btn-bg, 99% );
+    background: linear-gradient(tint( $btn-bg, 90% ), $btn-bg);
+    // opacity: 1;
+  }
+  &:hover .reflet {
+    background: #FFFFFF;
+    background: linear-gradient(#fff, tint( #FFFF00, 0% ));
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    top: -3px; left: -3px;
+    width: 100%; height: inherit;
+    padding: 3px;
+    border-radius: 56px;
+    box-shadow: 0 0 10px #85776E;
+    transition: all .8s;
+    background-color: rgba(0,0,0,0);
+    // border: 1px solid #EB121D;
+  }
+  @keyframes move {
+    from { left: 0; opacity: 1; }
+    to   { left: 12px; opacity: 0.8; }
+  }
+  @keyframes move {
+    0%{ left: 0; opacity: 1; }
+    100%{ left: 12px; opacity: 0.8; }
+  }
+  .move {
+    animation: move .6s 0.5s steps(24) infinite alternate;
+  }
+  &:hover {
+    .move{
+      animation-play-state: paused;
+    }
+    // background-color: rgba(0,0,0,0.2);
+    color: #F82B0C;
+    text-shadow: none;
+    background-color: #FFFF00;
+  }
+}
+
+
+.bottomfade {
+  position: absolute; bottom: 0;
+  width: 100%; height: 100px;
+  background: linear-gradient(rgba(250,250,250,0), #FFFFFF);
+}
