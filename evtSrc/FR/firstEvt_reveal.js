@@ -20,23 +20,31 @@ var numPk = [1,2,3],
     anime = ['gopk', 'goTitle','goSub1','goSub2', 'goSub3'];
 
 // init animation
-var init = function () {
+var init = function (index, arg) {
   for (var i = 0; i < pkAry.length; i++) {
-    if (document.querySelector(pkAry[i]+numPk[0])) {
-      return document.querySelector(pkAry[i]+numPk[0]).classList.add(anime[i])
+    if (document.querySelector(pkAry[i]+numPk[index])) {
+      console.log(document.querySelector(pkAry[i]+numPk[index]));
+      if(arg === 'add'){
+        document.querySelector(pkAry[i]+numPk[index]).classList.add(anime[i])
+      }else{
+        document.querySelector(pkAry[i]+numPk[index]).classList.remove(anime[i])
+      };
     };
-  }
+  };
 }
+init(0,"add")
 
 var myEndFunction = function (){
   // console.log(this.classList + " END event was occured !");
   if(this.classList[0] === 'pck1' && this.classList[1] === 'gopk'){
+    init(0,'remove')
     // this.classList.remove('gopk');
-    for (var i = 0; i < pkAry.length; i++) {
-      if (document.querySelector(pkAry[i]+numPk[0])) {
-        document.querySelector(pkAry[i]+numPk[0]).classList.remove(anime[i])
-      };
-    }
+    // for (var i = 0; i < pkAry.length; i++) {
+    //   if (document.querySelector(pkAry[i]+numPk[0])) {
+    //     document.querySelector(pkAry[i]+numPk[0]).classList.remove(anime[i])
+    //   };
+    // }
+
     // if (title_un) title_un.classList.remove('goTitle');
     // if (sub1_un) sub1_un.classList.remove('goSub1');
     // if (sub2_un) sub2_un.classList.remove('goSub2');
