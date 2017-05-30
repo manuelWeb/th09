@@ -1,6 +1,5 @@
-(function() {
   // var global
-  var pk_un = document.querySelector('.pck1'),
+var pk_un = document.querySelector('.pck1'),
     title_un = document.querySelector('.title-pck1'),
     sub1_un = document.querySelector('.sub1-pck1'),
     sub2_un = document.querySelector('.sub2-pck1'),
@@ -16,22 +15,32 @@ var pk_trois = document.querySelector('.pck3'),
     sub2_trois = document.querySelector('.sub2-pck3'),
     sub3_trois = document.querySelector('.sub3-pck3');
 
-// init animation
-pk_un.classList.add('gopk');
-title_un.classList.add('goTitle');
-sub1_un.classList.add('goSub1');
-sub2_un.classList.add('goSub2');
-sub3_un.classList.add('goSub3');
+var numPk = [1,2,3],
+    pkAry = ['.pck','.title-pck','.sub1-pck','.sub2-pck','.sub3-pck'],
+    anime = ['gopk', 'goTitle','goSub1','goSub2', 'goSub3'];
 
-function myEndFunction(){
+// init animation
+var init = function () {
+  for (var i = 0; i < pkAry.length; i++) {
+    if (document.querySelector(pkAry[i]+numPk[0])) {
+      return document.querySelector(pkAry[i]+numPk[0]).classList.add(anime[i])
+    };
+  }
+}
+
+var myEndFunction = function (){
   // console.log(this.classList + " END event was occured !");
-  
   if(this.classList[0] === 'pck1' && this.classList[1] === 'gopk'){
-    this.classList.remove('gopk');
-    if (title_un) title_un.classList.remove('goTitle');
-    if (sub1_un) sub1_un.classList.remove('goSub1');
-    if (sub2_un) sub2_un.classList.remove('goSub2');
-    if (sub3_un) sub3_un.classList.remove('goSub3');
+    // this.classList.remove('gopk');
+    for (var i = 0; i < pkAry.length; i++) {
+      if (document.querySelector(pkAry[i]+numPk[0])) {
+        document.querySelector(pkAry[i]+numPk[0]).classList.remove(anime[i])
+      };
+    }
+    // if (title_un) title_un.classList.remove('goTitle');
+    // if (sub1_un) sub1_un.classList.remove('goSub1');
+    // if (sub2_un) sub2_un.classList.remove('goSub2');
+    // if (sub3_un) sub3_un.classList.remove('goSub3');
 
     pk_deux.classList.add('gopk');
     if (title_deux) title_deux.classList.add('goTitle');
@@ -73,4 +82,5 @@ function myEndFunction(){
 // evt PK1 sur END animation gopk
 pk_un.addEventListener("animationend", myEndFunction);
 
-})(); // end IEF
+/*(function() {
+})(); // end IEF*/
