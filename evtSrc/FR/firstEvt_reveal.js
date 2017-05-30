@@ -24,7 +24,7 @@ sub2_un.classList.add('goSub2');
 sub3_un.classList.add('goSub3');
 
 function myEndFunction(){
-  console.log(this.classList + " END event was occured !")
+  // console.log(this.classList + " END event was occured !");
   
   if(this.classList[0] === 'pck1' && this.classList[1] === 'gopk'){
     this.classList.remove('gopk');
@@ -59,7 +59,7 @@ function myEndFunction(){
     if (title_trois) title_trois.classList.remove('goTitle');
     if (sub1_trois) sub1_trois.classList.remove('goSub1');
     if (sub2_trois) sub2_trois.classList.remove('goSub2');
-    if (sub3_trois) sub3_trois.classList.remove('goSub3')
+    if (sub3_trois) sub3_trois.classList.remove('goSub3');
 
     pk_un.classList.add('gopk');
     if (title_un) title_un.classList.add('goTitle');
@@ -68,7 +68,7 @@ function myEndFunction(){
     if (sub3_un) sub3_un.classList.add('goSub3');
     // evt PK1
     pk_un.addEventListener("animationend", myEndFunction);
-  };
+  }
 }
 // evt PK1 sur END animation gopk
 pk_un.addEventListener("animationend", myEndFunction);
