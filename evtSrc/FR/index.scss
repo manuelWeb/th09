@@ -97,6 +97,19 @@ ul {list-style: none;}
   // animation-iteration-count: 1;
   animation-delay: 3.5s;
 }
+.stop_wrapper {
+  position: absolute; top: 0; left: 0;
+  width: 50px; height: 50px; display: inline-block;
+  background-color: deeppink; border-radius: 100px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+.stop_wrapper:hover {
+  & .gopk, & .goTitle, & .goSub1, & .goSub2, & .goSub3{
+    animation-play-state: paused;
+  }
+}
 // animations
 @keyframes go {
   0% {opacity: 1; top: -240px; }
