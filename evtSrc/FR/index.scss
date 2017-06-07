@@ -1,5 +1,3 @@
-// surcharge styleV4.css
-,#hpAnimCo {height: 494px;}
 // functions.scss
 /// Slightly lighten a color
 @function tint($color, $percentage) {
@@ -11,6 +9,10 @@ $font-stack-arial: Arial, Helvetica, sans-serif;
 $font-stack-serif: Georgia, Times, "Times New Roman", serif;
 $btn-bg : #f00;//#ffff00
 $btn-txtColor: #fff;
+$animHeight: 494px;
+
+// surcharge
+#hpAnimCo{height: $animHeight;}
 
 body, ul {margin: 0;}
 ul {list-style: none;}
@@ -22,19 +24,19 @@ ul {list-style: none;}
 }
 /* js globalLink */
 #globalLink {
-  transform: translateZ(0);  /* activation de l'AM */
+  transform: translateZ(0);  /* activation de l'AM accelera matereil */
   position: absolute; top: 0; left: 0;
-  width: 964px; height: 465px;
-  // background: url(evtFirst_bd-diffu.png) no-repeat left bottom; // enable to fade bottom insert
+  width: 964px; height: $animHeight;
 }
 
 * {box-sizing: border-box;}
 
 .centralEvent {
-  position: relative; width: 964px; height: 465px;
+  position: relative; width: 964px; height: $animHeight;
   background: url(bg.jpg) no-repeat 0 0;
   overflow: hidden;
 }
+
 .pk1, .pk2, .pk3 {
   // position: absolute; top: -240px; left: 82px; overflow: hidden;
   position: absolute; top: -240px; right: 652px; overflow: hidden;
@@ -43,22 +45,13 @@ ul {list-style: none;}
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
   img {display: block;}
 }
-
-// temps
-// .pk1 {top: 52px; left: 82px;}
-// .pk2 {top: 212px; left: initial;}
-
 .title-pk1, .title-pk2, .title-pk3 {
   position: absolute; top: 72px; left: 964px;
   font: bold italic 24px Arial, Helvetica, sans-serif;
-  // background-color: #FFFF00;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
   overflow: hidden;
 }
-
-// temps
-// .title-pk1 { left: 338px; }
-
 .sub1-pk1, .sub2-pk1, .sub3-pk1,
 .sub1-pk2, .sub2-pk2, .sub3-pk2,
 .sub1-pk3, .sub2-pk3, .sub3-pk3 {
@@ -71,6 +64,7 @@ ul {list-style: none;}
   position: absolute; left: 964px; height: 24px; padding: 0 10px;
   font: italic normal 16px/24px Arial, Helvetica, sans-serif; color: #FFF;
   background-color: #066C02;
+  white-space: nowrap;
   overflow: hidden;
 }
 .sub1-pk1, .sub1-pk2, .sub1-pk3 {top: 112px; left: 964px; }
@@ -78,60 +72,35 @@ ul {list-style: none;}
 .sub3-pk1, .sub3-pk2, .sub3-pk3 {top: 182px; left: 964px; }
 
 //temps
-// .sub1-pk1, .sub2-pk1, .sub3-pk1 {
-//   left: 338px;
-// }
+// .pk1 {top: 52px; left: 82px;}
+// .pk2 {top: 212px; left: initial;}
+// .title-pk1 { left: 338px; }
+// .sub1-pk1, .sub2-pk1, .sub3-pk1 {left: 338px; }
 
 .gopk {
-  animation-name: go;
-  animation-duration: 6s;
-  animation-timing-function: ease-in-out;
-  // animation-iteration-count: 1;
-  animation-delay: 1s;
-  // arrete anime dans son état de fin
-  animation-fill-mode: forwards;
+  animation: go 6s ease-in-out 0s;
 }
 .goTitle {
-  animation-name: titles;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  // animation-iteration-count: 1;
-  animation-delay: 2s;
-  // arrete anime dans son état de fin
-  animation-fill-mode: forwards;
+  animation: titles 5s ease-in-out 1s;
 }
 .goSub1 {
-  animation-name: titles;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  // animation-iteration-count: 1;
-  animation-delay: 2.5s;
+  animation: titles 5s ease-in-out 1.5s;
 }
 .goSub2 {
-  animation-name: titles;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  // animation-iteration-count: 1;
-  animation-delay: 3s;
+  animation: titles 5s ease-in-out 2s;
 }
 .goSub3 {
-  animation-name: titles;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  // animation-iteration-count: 1;
-  animation-delay: 3.5s;
+  animation-name: titles 5s ease-in-out 3.5s;
 }
-
-// .pk1_end { left: 82px; }
 @keyframes go {
   0% {opacity: 1; top: -240px; }
-  10%,80% {opacity: 1; top: 52px; filter: blur(0px); }
+  10%,90% {opacity: 1; top: 52px; filter: blur(0px); }
   100% {opacity: 0; top: 52px; filter: blur(35px); }
 }
 
 @keyframes titles {
   0% {opacity: 1; left: 964px; }
-  10%,80% {opacity: 1; left: 338px; filter: blur(0px); }
+  10%,90% {opacity: 1; left: 338px; filter: blur(0px); }
   100% {opacity: 0; left: 690px; filter: blur(35px); }
 }
 
@@ -149,7 +118,6 @@ ul {list-style: none;}
   border-radius: 100%;
   box-shadow: 0 0 10px rgba(0,0,0,0.35);
   // transform: rotate(-8deg);
-
   b {
     color: #002D00;
     font-size: 26px; font-weight: normal;
@@ -197,6 +165,7 @@ ul {list-style: none;}
       font-size: 20px;
       // border: 1px solid red;
     }
+
   }
   .arrow {
     vertical-align: middle;
@@ -227,9 +196,7 @@ ul {list-style: none;}
   &:hover {
     background-color: #FF3399;
   }
-
 }
-
 
 .bottomfade {
   position: absolute; bottom: 0;
@@ -250,89 +217,3 @@ ul {list-style: none;}
 //     animation-play-state: paused;
 //   }
 // }
-
-/*
-@keyframes goend {
-  0% {opacity: 1; top: -230px; }
-  10%,100% {opacity: 1; top: 10px; }
-}
-@keyframes titleend {
-  0% {left: 964px; }
-  10%,100% {left: 690px; }
-}
-.pk1, .pk2, .pk3 {
-  animation-name: go;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-}
-.pk1 {
-  animation-delay: 1s;
-}
-.pk2 {
-  animation-delay: 7s;
-}
-.pk3 {
-  animation-name: goend;
-  animation-delay: 13s;
-  animation-fill-mode: forwards;
-}
-
-.title-pk1, .title-pk2, .title-pk3,
-.sub1-pk1, .sub2-pk1, .sub3-pk1,
-.sub1-pk2, .sub2-pk2, .sub3-pk2 {
-  animation-name: titles;
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-}
-.title-pk1 {
-  animation-delay: 2s;
-}
-.title-pk2 {
-  animation-delay: 8s;
-}
-.title-pk3 {
-  animation-name: titleend;
-  animation-delay: 14s;
-  animation-fill-mode: forwards;
-}
-
-.sub1-pk1 {
-  top: 92px;
-  animation-delay: 2.1s;
-}
-.sub2-pk1 {
-  top: 122px;
-  animation-delay: 2.2s;
-}
-.sub3-pk1 {
-  top: 152px;
-  animation-delay: 2.3s;
-}
-
-.sub1-pk2 {
-  top: 92px;
-  animation-delay: 8.1s;
-}
-.sub2-pk2 {
-  top: 122px;
-  animation-delay: 8.2s;
-}
-.sub3-pk2 {
-  top: 152px;
-  animation-delay: 8.3s;
-}
-
-.sub1-pk3 {
-  top: 92px;
-  animation: titleend 3s 14.1s ease-in-out forwards;
-}
-.sub2-pk3 {
-  top: 122px;
-  animation: titleend 3s 14.2s ease-in-out forwards;
-}
-.sub3-pk3 {
-  top: 152px;
-  animation: titleend 3s 14.3s ease-in-out forwards;
-} */

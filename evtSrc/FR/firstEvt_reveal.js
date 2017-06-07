@@ -18,13 +18,13 @@ var init = function (index, arg) {
     }
   }
 };
-// init anime
+// init anime with pk1
 init(0,"add");
 
 var myEndFunction = function (){
   // console.log(this.classList + " END event was occured !");
-  console.log(this.classList[0] +"\n"+ this.classList[1]);
-  if(this.classList[0] === 'sub3-pk1' && this.classList[1] === 'goSub3'){
+  // console.log(this.classList[0] +"\n"+ this.classList[1]);
+  if(this.classList[0] === 'sub2-pk1' && this.classList[1] === 'goSub2'){
     init(0,'remove');
     init(1,'add');
     // evt PK2
@@ -41,6 +41,6 @@ var myEndFunction = function (){
   }
 };
 // ecouteur evt PK1 animationend > gopk
-document.querySelector('.sub3-pk1').addEventListener("animationend", myEndFunction);
+document.querySelector('.sub2-pk1').addEventListener("animationend", myEndFunction);
 
 })(); // end IEF
