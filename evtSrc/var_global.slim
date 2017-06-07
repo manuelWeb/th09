@@ -1,14 +1,102 @@
 -$date     = "0616"
--$TH       = "TH11-insectes"
+-$TH       = "TH09-nuisible"
 / ID all country
-- $ID = { # ...,
-  fr: "1294",
-  bf: "1293",
-  bv: "1297",
-  de: "1296",
-  nl: "1292",
-  uk: "1295"}
+-$ID = { # ...,
+  fr: "1468",
+  bf: "1467",
+  bv: "1471",
+  nl: "1466",
+  de: "1470",
+  uk: "1469"}
+-pdtfr = { # ...,
+  pk1pat: "maison-deco/lampes-bougies/", pk1: "photophore-papillon", pk1ref: "1721117",
+  pk2pat: "maison-deco/decoration/", pk2: "suspension-papillons", pk2ref: "1759117",
+  pk3pat: "vetements-accessoires/bijoux/", pk3: "pendentif-papillon", pk3ref: "1727114",
+  pk4pat: "no/path/", pk4: "noproduct", pk4ref: "xxxxxxx"}
+-pdtbf = { # ...,
+  pk1pat: "#{pdtfr[:pk1pat]}", pk1: "#{pdtfr[:pk1]}", pk1ref: "#{pdtfr[:pk1ref]}",
+  pk2pat: "#{pdtfr[:pk2pat]}", pk2: "#{pdtfr[:pk2]}", pk2ref: "#{pdtfr[:pk2ref]}",
+  pk3pat: "#{pdtfr[:pk3pat]}", pk3: "#{pdtfr[:pk3]}", pk3ref: "#{pdtfr[:pk3ref]}",
+  pk4pat: "#{pdtfr[:pk4pat]}", pk4: "#{pdtfr[:pk4]}", pk4ref: "#{pdtfr[:pk4ref]}"}
+-pdtbv = { # ...,
+  pk1pat: "huis-decoratie/lampen-en-kaarsen/", pk1: "vlinderkandelaars", pk1ref: "1721117",
+  pk2pat: "kleding-accessoires/vrouwenschoenen/", pk2: "muiltjes-vlindermotief-maat-36", pk2ref: "#{pdtfr[:pk2ref]}",
+  pk3pat: "kleding-accessoires/sieraden/", pk3: "vlinderhanger", pk3ref: "1727114",
+  pk4pat: "no/path/", pk4: "noproduct", pk4ref: "xxxxxxx"}
+-pdtnl = { # ...,
+  pk1pat: "huis-decoratie/lampen-en-kaarsen/", pk1: "vlinderkandelaars", pk1ref: "1721117",
+  pk2pat: "#{pdtbv[:pk2pat]}", pk2: "#{pdtbv[:pk2]}", pk2ref: "#{pdtfr[:pk2ref]}",
+  pk3pat: "#{pdtbv[:pk3pat]}", pk3: "#{pdtbv[:pk3]}", pk3ref: "#{pdtbv[:pk3ref]}",
+  pk4pat: "#{pdtbv[:pk4pat]}", pk4: "#{pdtbv[:pk4]}", pk4ref: "#{pdtbv[:pk4ref]}"}
+-pdtde = { # ...,
+  pk1pat: "heim-dekoration/lampen-und-kerzen/", pk1: "windlicht-schmetterlinge", pk1ref: "1721117",
+  pk2pat: "kleidung-zubehor/damenschuhe/", pk2: "pantoffeln-schmetterlinge-grosse-36", pk2ref: "#{pdtfr[:pk2ref]}",
+  pk3pat: "kleidung-zubehor/schmuck/", pk3: "anhanger-schmetterling", pk3ref: "1727114",
+  pk4pat: "no/path/", pk4: "noproduct", pk4ref: "xxxxxxx"}
+-pdtuk = { # ...,
+  pk1pat: "home-decoration/lighting-candles/", pk1: "butterfly-candleholder", pk1ref: "1721117",
+  pk2pat: "clothing-accessories/women-s-shoes/", pk2: "mules-butterflies-size-3", pk2ref: "#{pdtfr[:pk2ref]}",
+  pk3pat: "clothing-accessories/jewellery/", pk3: "butterfly-pendant", pk3ref: "1727114",
+  pk4pat: "no/path/", pk4: "noproduct", pk4ref: "xxxxxxx"}
 
+- $price = {# ,
+ fr: "Sélection<br /> à partir de", ent: "6", dec: ".95", unit: "€", unituk: "£",
+ de: "Ab", nl: "Selectie<br /> vanaf", uk: "Selection<br /> from",
+}
 
+/ NO CHANGE google PK x3 track
+-ggpk = { #...,
+  pck1: "'pk1_#{pdtfr[:pk1]}_#{pdtfr[:pk1ref]}', ", pck2: "'pk2_#{pdtfr[:pk2]}_#{pdtfr[:pk2ref]}', ", pck3: "'pk3_#{pdtfr[:pk3]}_#{pdtfr[:pk3ref]}', ", pck4: "'pk4_#{pdtfr[:pk4]}_#{pdtfr[:pk4ref]}', ",
+  pck1_bf: "'pk1_#{pdtbf[:pk1]}_#{pdtbf[:pk1ref]}', ", pck2_bf: "'pk2_#{pdtbf[:pk2]}_#{pdtbf[:pk2ref]}', ", pck3_bf: "'pk3_#{pdtbf[:pk3]}_#{pdtbf[:pk3ref]}', ", pck4_bf: "'pk4_#{pdtbf[:pk4]}_#{pdtbf[:pk4ref]}', ",
+  pck1_de: "'pk1_#{pdtde[:pk1]}_#{pdtde[:pk1ref]}', ", pck2_de: "'pk2_#{pdtde[:pk2]}_#{pdtde[:pk2ref]}', ", pck3_de: "'pk3_#{pdtde[:pk3]}_#{pdtde[:pk3ref]}', ", pck4_de: "'pk4_#{pdtde[:pk4]}_#{pdtde[:pk4ref]}', ",
+  pck1_nl: "'pk1_#{pdtnl[:pk1]}_#{pdtnl[:pk1ref]}', ", pck2_nl: "'pk2_#{pdtnl[:pk2]}_#{pdtnl[:pk2ref]}', ", pck3_nl: "'pk3_#{pdtnl[:pk3]}_#{pdtnl[:pk3ref]}', ", pck4_nl: "'pk4_#{pdtnl[:pk4]}_#{pdtnl[:pk4ref]}', ",
+  pck1_bv: "'pk1_#{pdtbv[:pk1]}_#{pdtbv[:pk1ref]}', ", pck2_bv: "'pk2_#{pdtbv[:pk2]}_#{pdtbv[:pk2ref]}', ", pck3_bv: "'pk3_#{pdtbv[:pk3]}_#{pdtbv[:pk3ref]}', ", pck4_bv: "'pk4_#{pdtbv[:pk4]}_#{pdtbv[:pk4ref]}', ",
+  pck1_uk: "'pk1_#{pdtuk[:pk1]}_#{pdtuk[:pk1ref]}', ", pck2_uk: "'pk2_#{pdtuk[:pk2]}_#{pdtuk[:pk2ref]}', ", pck3_uk: "'pk3_#{pdtuk[:pk3]}_#{pdtuk[:pk3ref]}', ", pck4_uk: "'pk4_#{pdtuk[:pk4]}_#{pdtuk[:pk4ref]}', ",
+  }
+/ do not change > base URL
+-$urlfr = "http://www.tempsl.fr/fr/"
+-$urlIC = ["http://www.ideascomfort.","be/befr/","be/bevl/","de/de/","nl/nl/","co.uk/uk/"]
+// do not change google track
+-ggstart = "ga('local.send', 'event', 'EncartHP', "
+-ggend = "document.location.pathname);"
+-$ggall = [0, ggstart+ggpk[:pck1]+ggend, ggstart+ggpk[:pck2]+ggend, ggstart+ggpk[:pck3]+ggend, ggstart+ggpk[:pck4]+ggend]
+-$ggall_bf = [0, ggstart+ggpk[:pck1_bf]+ggend, ggstart+ggpk[:pck2_bf]+ggend, ggstart+ggpk[:pck3_bf]+ggend, ggstart+ggpk[:pck4_bf]+ggend]
+-$ggall_de = [0, ggstart+ggpk[:pck1_de]+ggend, ggstart+ggpk[:pck2_de]+ggend, ggstart+ggpk[:pck3_de]+ggend, ggstart+ggpk[:pck4_de]+ggend]
+-$ggall_nl = [0, ggstart+ggpk[:pck1_nl]+ggend, ggstart+ggpk[:pck2_nl]+ggend, ggstart+ggpk[:pck3_nl]+ggend, ggstart+ggpk[:pck4_nl]+ggend]
+-$ggall_bv = [0, ggstart+ggpk[:pck1_bv]+ggend, ggstart+ggpk[:pck2_bv]+ggend, ggstart+ggpk[:pck3_bv]+ggend, ggstart+ggpk[:pck4_bv]+ggend]
+-$ggall_uk = [0, ggstart+ggpk[:pck1_uk]+ggend, ggstart+ggpk[:pck2_uk]+ggend, ggstart+ggpk[:pck3_uk]+ggend, ggstart+ggpk[:pck4_uk]+ggend]
+/ do not change
+- $pck1 = { #...,
+  fr: "#{$urlfr}#{pdtfr[:pk1pat]}#{pdtfr[:pk1]}/#{pdtfr[:pk1ref]}.html",
+  bf: "#{$urlIC[0]+$urlIC[1]}#{pdtbf[:pk1pat]}#{pdtbf[:pk1]}/#{pdtbf[:pk1ref]}.html",
+  bv: "#{$urlIC[0]+$urlIC[2]}#{pdtbv[:pk1pat]}#{pdtbv[:pk1]}/#{pdtbv[:pk1ref]}.html",
+  de: "#{$urlIC[0]+$urlIC[3]}#{pdtde[:pk1pat]}#{pdtde[:pk1]}/#{pdtde[:pk1ref]}.html",
+  nl: "#{$urlIC[0]+$urlIC[4]}#{pdtnl[:pk1pat]}#{pdtnl[:pk1]}/#{pdtnl[:pk1ref]}.html",
+  uk: "#{$urlIC[0]+$urlIC[5]}#{pdtuk[:pk1pat]}#{pdtuk[:pk1]}/#{pdtuk[:pk1ref]}.html",
+  }
+- $pck2 = { #...,
+  fr: "#{$urlfr}#{pdtfr[:pk2pat]}#{pdtfr[:pk2]}/#{pdtfr[:pk2ref]}.html",
+  bf: "#{$urlIC[0]+$urlIC[1]}#{pdtbf[:pk2pat]}#{pdtbf[:pk2]}/#{pdtbf[:pk2ref]}.html",
+  bv: "#{$urlIC[0]+$urlIC[2]}#{pdtbv[:pk2pat]}#{pdtbv[:pk2]}/#{pdtbv[:pk2ref]}.html",
+  de: "#{$urlIC[0]+$urlIC[3]}#{pdtde[:pk2pat]}#{pdtde[:pk2]}/#{pdtde[:pk2ref]}.html",
+  nl: "#{$urlIC[0]+$urlIC[4]}#{pdtnl[:pk2pat]}#{pdtnl[:pk2]}/#{pdtnl[:pk2ref]}.html",
+  uk: "#{$urlIC[0]+$urlIC[5]}#{pdtuk[:pk2pat]}#{pdtuk[:pk2]}/#{pdtuk[:pk2ref]}.html",
+  }
+- $pck3 = { #...,
+  fr: "#{$urlfr}#{pdtfr[:pk3pat]}#{pdtfr[:pk3]}/#{pdtfr[:pk3ref]}.html",
+  bf: "#{$urlIC[0]+$urlIC[1]}#{pdtbf[:pk3pat]}#{pdtbf[:pk3]}/#{pdtbf[:pk3ref]}.html",
+  bv: "#{$urlIC[0]+$urlIC[2]}#{pdtbv[:pk3pat]}#{pdtbv[:pk3]}/#{pdtbv[:pk3ref]}.html",
+  de: "#{$urlIC[0]+$urlIC[3]}#{pdtde[:pk3pat]}#{pdtde[:pk3]}/#{pdtde[:pk3ref]}.html",
+  nl: "#{$urlIC[0]+$urlIC[4]}#{pdtnl[:pk3pat]}#{pdtnl[:pk3]}/#{pdtnl[:pk3ref]}.html",
+  uk: "#{$urlIC[0]+$urlIC[5]}#{pdtuk[:pk3pat]}#{pdtuk[:pk3]}/#{pdtuk[:pk3ref]}.html",
+  }
+- $pck4 = { #...,
+  fr: "#{$urlfr}#{pdtfr[:pk4pat]}#{pdtfr[:pk4]}/#{pdtfr[:pk4ref]}.html",
+  bf: "#{$urlIC[0]+$urlIC[1]}#{pdtbf[:pk4pat]}#{pdtbf[:pk4]}/#{pdtbf[:pk4ref]}.html",
+  bv: "#{$urlIC[0]+$urlIC[2]}#{pdtbv[:pk4pat]}#{pdtbv[:pk4]}/#{pdtbv[:pk4ref]}.html",
+  de: "#{$urlIC[0]+$urlIC[3]}#{pdtde[:pk4pat]}#{pdtde[:pk4]}/#{pdtde[:pk4ref]}.html",
+  nl: "#{$urlIC[0]+$urlIC[4]}#{pdtnl[:pk4pat]}#{pdtnl[:pk4]}/#{pdtnl[:pk4ref]}.html",
+  uk: "#{$urlIC[0]+$urlIC[5]}#{pdtuk[:pk4pat]}#{pdtuk[:pk4]}/#{pdtuk[:pk4ref]}.html",
+  }
 
 

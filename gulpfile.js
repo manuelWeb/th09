@@ -102,6 +102,7 @@ gulp.task('sass', function() {
 //       ]
 //     }));
 // })
+
 // slim task
 gulp.task('slim', function () {
   var slimEnd = false;
@@ -113,7 +114,6 @@ gulp.task('slim', function () {
     basename: "index",
     extname : ".html"
   }))
-  .pipe(changed(dest))
   .pipe(using())
   .pipe(gulp.dest(dest))
   .on('end',function () {
