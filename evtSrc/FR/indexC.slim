@@ -15,21 +15,21 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
         .bottomfade
 
       / .stop_wrapper
-      .pk1.pk1_end
+      .pk1
         img src="pk1.jpg" alt=""
       span.title-pk1 == $titre1
       span.sub1-pk1 == $sTitre1[0]
       span.sub2-pk1 == $sTitre1[1]
-      / span.sub3-pk1 == $sTitre1[2]
+      span.sub3-pk1 == $sTitre1[2]
 
       .pk2
-        img src="pk2.png" alt=""
+        img src="pk2.jpg" alt=""
       span.title-pk2 == $titre2
       span.sub1-pk2 == $sTitre2[0]
       span.sub2-pk2 == $sTitre2[1]
 
       .pk3
-        img src="pk3.png" alt=""
+        img src="pk3.jpg" alt=""
       span.title-pk3 == $titre3
       span.sub1-pk3 == $sTitre3[0]
       span.sub2-pk3 == $sTitre3[1]
@@ -53,4 +53,4 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
             == $price[:dec] + $price[:unit]
 
     / script type="text/javascript" src="track.js"
-    / script type="text/javascript" src="firstEvt_reveal.js"
+    script type="text/javascript" src="firstEvt_reveal.js"

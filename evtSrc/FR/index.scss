@@ -1,3 +1,5 @@
+// surcharge styleV4.css
+,#hpAnimCo {height: 494px;}
 // functions.scss
 /// Slightly lighten a color
 @function tint($color, $percentage) {
@@ -18,7 +20,6 @@ ul {list-style: none;}
   margin: 0;
   background: url(bg.jpg) no-repeat;
 }
-
 /* js globalLink */
 #globalLink {
   transform: translateZ(0);  /* activation de l'AM */
@@ -35,16 +36,17 @@ ul {list-style: none;}
   overflow: hidden;
 }
 .pk1, .pk2, .pk3 {
-  position: absolute; top: -240px; left: 430px; overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-}
-.pk1 {
+  // position: absolute; top: -240px; left: 82px; overflow: hidden;
+  position: absolute; top: -240px; right: 652px; overflow: hidden;
   padding: 10px;
   background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
   img {display: block;}
 }
+
 // temps
-.pk1_end { top: 52px; left: 82px; }
+// .pk1 {top: 52px; left: 82px;}
+// .pk2 {top: 212px; left: initial;}
 
 .title-pk1, .title-pk2, .title-pk3 {
   position: absolute; top: 72px; left: 964px;
@@ -55,7 +57,7 @@ ul {list-style: none;}
 }
 
 // temps
-.title-pk1 { left: 338px; }
+// .title-pk1 { left: 338px; }
 
 .sub1-pk1, .sub2-pk1, .sub3-pk1,
 .sub1-pk2, .sub2-pk2, .sub3-pk2,
@@ -76,9 +78,9 @@ ul {list-style: none;}
 .sub3-pk1, .sub3-pk2, .sub3-pk3 {top: 182px; left: 964px; }
 
 //temps
-.sub1-pk1, .sub2-pk1, .sub3-pk1 {
-  left: 338px;
-}
+// .sub1-pk1, .sub2-pk1, .sub3-pk1 {
+//   left: 338px;
+// }
 
 .gopk {
   animation-name: go;
@@ -120,16 +122,16 @@ ul {list-style: none;}
   animation-delay: 3.5s;
 }
 
-// animations
+// .pk1_end { left: 82px; }
 @keyframes go {
   0% {opacity: 1; top: -240px; }
-  10%,80% {opacity: 1; top: 10px; filter: blur(0px); }
-  100% {opacity: 0; top: 10px; filter: blur(35px); }
+  10%,80% {opacity: 1; top: 52px; filter: blur(0px); }
+  100% {opacity: 0; top: 52px; filter: blur(35px); }
 }
 
 @keyframes titles {
   0% {opacity: 1; left: 964px; }
-  10%,80% {opacity: 1; left: 690px; filter: blur(0px); }
+  10%,80% {opacity: 1; left: 338px; filter: blur(0px); }
   100% {opacity: 0; left: 690px; filter: blur(35px); }
 }
 
@@ -175,10 +177,10 @@ ul {list-style: none;}
   display: inline-block;
   height: 52px;
   margin: 210px 0 0 652px;
-  padding: 0 18px;
+  padding: 0 28px;
   text-align: center;
   border: 2px solid #FFFFFF; color: $btn-txtColor;
-  font: bold normal 18px $font-stack-arial; text-decoration: none;
+  font: italic normal 18px $font-stack-arial; text-decoration: none;
   text-shadow: 0px 0px 5px $btn-bg;
   transition: all .8s;
 
