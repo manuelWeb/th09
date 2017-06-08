@@ -6,39 +6,50 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
     meta http-equiv="Content-Type" content="text/html;charset=UTF-8"
     title == $TH
     link type="text/css" rel="stylesheet" href="index.css"
-    / link type="text/css" rel="stylesheet" href="index.scss"
+    / link href="index.scss"
     script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"
   body
     == $styleIE
     #evtFirst_Link.centralEvent
       #globalLink
         .bottomfade
-      .pck1
-        img src="pck1.png" alt=""
-      span.title-pck1 == $titre1
-      span.sub1-pck1 == $sTitre1[0]
-      span.sub2-pck1 == $sTitre1[1]
-      / span.sub3-pck1 == $sTitre1[2]
+      .pk1
+        a href==($pck1[:nl])
+          img src="pk1.jpg" alt=""
+      span.title-pk1 == $titre1
+      span.sub1-pk1 == $sTitre1[0]
+      span.sub2-pk1 == $sTitre1[1]
 
-      .pck2
-        img src="pck2.png" alt=""
-      span.title-pck2 == $titre2
-      span.sub1-pck2 == $sTitre2[0]
-      span.sub2-pck2 == $sTitre2[1]
+      .pk2
+        a href==($pck2[:nl])
+          img src="pk2.jpg" alt=""
+      span.title-pk2 == $titre2
+      span.sub1-pk2 == $sTitre2[0]
+      span.sub2-pk2 == $sTitre2[1]
 
-      .pck3
-        img src="pck3.png" alt=""
-      span.title-pck3 == $titre3
-      span.sub1-pck3 == $sTitre3[0]
-      span.sub2-pck3 == $sTitre3[1]
+      .pk3
+        a href==($pck3[:nl])
+          img src="pk3.jpg" alt=""
+      span.title-pk3 == $titre3
+      span.sub1-pk3 == $sTitre3[0]
+      span.sub2-pk3 == $sTitre3[1]
 
       a.js-btn.gradient-btn-evtfirst href==($linkRay) onclick==($ga_ray_btn)
         span.reflet &nbsp;
         span
          == ($txtBtn[0])
-         br
-         span
-           == ($txtBtn[1])
+         / br
+         / span
+         /   == ($txtBtn[1])
+
+      / prix elipse
+      .price
+        .v-h-center.w100
+          == $price[:nl]
+          br
+          b
+            span == $price[:ent]
+            == $price[:dec] + $price[:unit]
 
     script type="text/javascript" src="track.js"
-    / script type="text/javascript" src="firstEvt_reveal.js"
+    script type="text/javascript" src="firstEvt_reveal.js"
